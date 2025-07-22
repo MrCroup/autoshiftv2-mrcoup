@@ -43,8 +43,6 @@ spec:
           operatorGroup:
             name: {{ .Values.compliance.name }}
             namespace: {{ .Values.compliance.namespace }}
-            targetNamespaces:
-              - {{ .Values.compliance.namespace }}
           subscription:
             namespace: {{ .Values.compliance.namespace }}
             channel: '{{ "{{" }}hub index .ManagedClusterLabels "autoshift.io/compliance-channel" | default "{{ .Values.compliance.channel }}" hub{{ "}}" }}'
